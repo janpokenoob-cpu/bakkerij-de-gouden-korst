@@ -8,49 +8,66 @@
         body {
             margin: 0;
             font-family: Georgia, serif;
-            background-color: #f6f3ef;
+            background-color: #f5f2ed;
             color: #2e2a26;
-            line-height: 1.6;
+            line-height: 1.7;
         }
         header {
-            background-color: #3b2f2a;
-            color: #f5e6c8;
-            padding: 2.5rem;
+            background-image: url("https://images.unsplash.com/photo-1608198093002-de5f8c1f2c3b");
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            padding: 4rem 2rem;
             text-align: center;
         }
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
         nav {
-            background-color: #d6c3a3;
+            background-color: #3b2f2a;
             padding: 1rem;
             text-align: center;
         }
         nav a {
+            color: #f5e6c8;
             margin: 0 1rem;
             text-decoration: none;
             font-weight: bold;
-            color: #2e2a26;
         }
         section {
-            max-width: 900px;
-            margin: 2.5rem auto;
+            max-width: 1000px;
+            margin: 3rem auto;
             padding: 0 1.5rem;
         }
         h2 {
             border-bottom: 2px solid #c2a878;
             padding-bottom: 0.5rem;
         }
+        .image-block {
+            margin: 2rem 0;
+        }
+        .image-block img {
+            width: 100%;
+            border-radius: 6px;
+        }
         .disclaimer {
-            max-width: 900px;
+            max-width: 1000px;
             margin: 2rem auto;
             padding: 1rem;
             background-color: #fff2cc;
             border: 1px solid #e0c97f;
             font-size: 0.95rem;
         }
+        .partners ul {
+            list-style-type: square;
+            padding-left: 1.5rem;
+        }
         footer {
             background-color: #3b2f2a;
             color: #f5e6c8;
             text-align: center;
-            padding: 1.5rem;
+            padding: 2rem;
             font-size: 0.9rem;
         }
     </style>
@@ -65,42 +82,80 @@
 <nav>
     <a href="#over">Over ons</a>
     <a href="#assortiment">Assortiment</a>
+    <a href="#leveranciers">Leveranciers</a>
     <a href="#filosofie">Filosofie</a>
     <a href="#praktisch">Praktisch</a>
 </nav>
 
 <div class="disclaimer">
-    <strong>FICTIEF:</strong> Deze website, bakkerij en alle beschreven activiteiten zijn volledig fictief
-    en uitsluitend bedoeld voor educatieve of creatieve doeleinden.
+    <strong>FICTIEVE WEBSITE:</strong> Deze bakkerij, alle personen, locaties, leveranciers en activiteiten
+    op deze website zijn volledig fictief en uitsluitend bedoeld voor educatieve en creatieve doeleinden.
 </div>
 
 <section id="over">
-    <h2>Over ons</h2>
+    <h2>Over Bakkerij De Gouden Korst</h2>
     <p>
         Bakkerij De Gouden Korst is een fictieve ambachtelijke bakkerij, zogenaamd opgericht in 1897
-        in het eveneens fictieve stadje Oudemarkt. De bakkerij staat in dit concept bekend om
-        langdurige fermentatie, een traditionele steenoven en kleinschalige productie.
+        in het eveneens fictieve stadje Oudemarkt. De bakkerij zou al vier generaties lang brood bakken
+        volgens traditionele methodes, met respect voor tijd, deeg en vuur.
+    </p>
+
+    <div class="image-block">
+        <img src="https://images.unsplash.com/photo-1549931319-a545dcf3bc73" alt="Ambachtelijke bakkerij">
+    </div>
+
+    <p>
+        In dit verhaal staat De Gouden Korst bekend om haar karakteristieke steenoven,
+        lange fermentatietijden en bewuste keuze voor kleinschalige productie.
     </p>
 </section>
 
 <section id="assortiment">
-    <h2>Assortiment</h2>
+    <h2>Ons assortiment</h2>
+
+    <div class="image-block">
+        <img src="https://images.unsplash.com/photo-1608198093002-38a8a3c5c5c4" alt="Vers brood">
+    </div>
+
     <ul>
         <li>Gouden Korst Zuurdesem (48 uur fermentatie)</li>
         <li>Korstakker meergranenbrood</li>
         <li>Donker Noorderroggebrood</li>
-        <li>Zondagsmik (alleen op zondag)</li>
+        <li>Zondagsmik (uitsluitend op zondag)</li>
         <li>Oudemarkttaart met appel en amandel</li>
         <li>Korstkrakeling met karamelsuiker</li>
-        <li>Mistkoek (geheim recept)</li>
+        <li>Mistkoek – kruidig familierecept</li>
+    </ul>
+</section>
+
+<section id="leveranciers" class="partners">
+    <h2>Fictieve leveranciers & partners</h2>
+    <p>
+        In dit fictieve concept werkt Bakkerij De Gouden Korst samen met kleinschalige,
+        regionale leveranciers die dezelfde waarden delen.
+    </p>
+    <ul>
+        <li><strong>Molen De Windval</strong> – ambachtelijk gemalen granen (fictief)</li>
+        <li><strong>Boerderij Het Gouden Erf</strong> – eieren en zuivel (fictief)</li>
+        <li><strong>Honinghuis Van Laar</strong> – lokale honing (fictief)</li>
+        <li><strong>Koffiebranderij Noordvuur</strong> – koffie voor de winkel (fictief)</li>
     </ul>
 </section>
 
 <section id="filosofie">
     <h2>Onze filosofie</h2>
+
+    <div class="image-block">
+        <img src="https://images.unsplash.com/photo-1517685352821-92cf88aee5a5" alt="Bakken in oven">
+    </div>
+
     <p>
-        In dit fictieve verhaal werkt De Gouden Korst volgens het principe van vertraagde productie:
-        geen haast, geen industriële processen en geen concessies aan kwaliteit.
+        In deze fictieve wereld werkt De Gouden Korst volgens het principe van
+        <em>vertraagde productie</em>: geen haast, geen industriële processen en
+        geen concessies aan kwaliteit.
+    </p>
+    <p>
+        Elk brood krijgt de tijd die het nodig heeft, niet meer en niet minder.
     </p>
 </section>
 
@@ -117,8 +172,8 @@
 
 <footer>
     <p>
-        © Bakkerij De Gouden Korst – Fictieve website<br>
-        Alle namen, locaties en gegevens zijn verzonnen.
+        © Bakkerij De Gouden Korst – Volledig fictieve website<br>
+        Alle inhoud is verzonnen en niet commercieel bedoeld.
     </p>
 </footer>
 
