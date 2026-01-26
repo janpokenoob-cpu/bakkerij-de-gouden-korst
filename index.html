@@ -2,16 +2,15 @@
 <html lang="nl">
 <head>
     <meta charset="UTF-8">
-    <title>Bakkerij De Gouden Korst | Ambacht sinds 1897</title>
+    <title>Historie | Bakkerij De Gouden Korst</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:italic,wght@0,400;0,700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #2C2420; /* Diep bruin/zwart */
-            --accent: #B08D57;  /* Gebakken goud */
-            --bg: #FDFCF8;      /* Linnen wit */
-            --card-bg: #ffffff;
-            --fictief-color: #d9534f; /* Subtiel rood voor de waarschuwing */
+            --primary: #2C2420;
+            --accent: #B08D57;
+            --bg: #FDFCF8;
+            --text-muted: #555;
         }
 
         body {
@@ -20,53 +19,17 @@
             background-color: var(--bg);
             color: var(--primary);
             line-height: 1.8;
-            scroll-behavior: smooth;
-        }
-
-        /* Fictief Banner - Altijd zichtbaar */
-        .fictief-top-bar {
-            background: var(--fictief-color);
-            color: white;
-            text-align: center;
-            padding: 5px 0;
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-weight: bold;
-        }
-
-        header {
-            height: 80vh;
-            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), 
-                        url('https://images.unsplash.com/photo-1517433447747-074095593892?q=80&w=2000&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            text-align: center;
-            padding: 20px;
-        }
-
-        header h1 {
-            font-family: 'Libre Baskerville', serif;
-            font-size: clamp(2.5rem, 10vw, 5rem);
-            margin: 0;
         }
 
         /* Navigatie */
         nav {
-            background: rgba(255,255,255,0.95);
-            backdrop-filter: blur(10px);
-            padding: 1rem;
+            background: white;
+            padding: 1.5rem;
+            text-align: center;
+            border-bottom: 1px solid #eee;
             position: sticky;
             top: 0;
-            z-index: 1000;
-            display: flex;
-            justify-content: center;
-            border-bottom: 1px solid rgba(0,0,0,0.05);
+            z-index: 100;
         }
 
         nav a {
@@ -74,156 +37,182 @@
             text-decoration: none;
             color: var(--primary);
             font-weight: 600;
-            font-size: 0.9rem;
-            transition: color 0.3s;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
         }
 
-        nav a:hover { color: var(--accent); }
+        /* Hero */
+        .hero {
+            height: 60vh;
+            background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1517433447747-074095593892?q=80&w=2000');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
 
-        /* Secties */
-        .container {
-            max-width: 1100px;
+        .hero h1 {
+            font-family: 'Libre Baskerville', serif;
+            font-size: clamp(2rem, 8vw, 4rem);
+        }
+
+        /* Content Blocks */
+        .section {
+            max-width: 900px;
             margin: 0 auto;
             padding: 80px 20px;
         }
 
-        .grid {
+        .history-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
+            gap: 40px;
+            margin-top: 40px;
         }
 
         h2 {
             font-family: 'Libre Baskerville', serif;
-            font-size: 2.5rem;
-            margin-bottom: 20px;
+            font-size: 2.2rem;
+            color: var(--primary);
         }
 
-        .image-frame {
-            position: relative;
-            box-shadow: 20px 20px 0px var(--accent);
+        .fictief-badge {
+            display: inline-block;
+            background: #eee;
+            color: #666;
+            padding: 2px 8px;
+            font-size: 0.7rem;
+            border-radius: 4px;
+            margin-bottom: 10px;
         }
 
-        img {
+        .image-full {
             width: 100%;
-            display: block;
-            border-radius: 2px;
+            height: 450px;
+            object-fit: cover;
+            margin: 40px 0;
+            border-radius: 4px;
         }
 
-        /* Assortiment Card */
-        .assortiment-list {
-            background: var(--card-bg);
-            padding: 40px;
-            border: 1px solid #eee;
+        .image-square {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 4px;
         }
 
-        .product-item {
+        /* Partner Sectie */
+        .partners {
+            background: #f4f1ec;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .partner-list {
             display: flex;
-            justify-content: space-between;
-            border-bottom: 1px solid #f0f0f0;
-            padding: 15px 0;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 40px;
         }
 
-        .product-item span:last-child {
-            color: var(--accent);
-            font-weight: bold;
+        .partner-card {
+            max-width: 250px;
+            font-style: italic;
         }
 
-        /* Footer */
         footer {
             background: var(--primary);
-            color: #ccc;
+            color: white;
             padding: 60px 20px;
             text-align: center;
         }
 
-        .disclaimer-box {
-            border: 1px solid rgba(255,255,255,0.2);
-            padding: 20px;
-            max-width: 600px;
-            margin: 40px auto 0;
+        .disclaimer {
             font-size: 0.8rem;
+            opacity: 0.6;
+            margin-top: 30px;
         }
 
         @media (max-width: 768px) {
-            .grid { grid-template-columns: 1fr; }
-            .image-frame { box-shadow: 10px 10px 0px var(--accent); }
+            .history-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
-<div class="fictief-top-bar">Let op: Dit is een fictief bakkersconcept</div>
-
-<header>
-    <h1>De Gouden Korst</h1>
-    <p style="font-family: 'Libre Baskerville', serif; font-style: italic;">Sinds 1897 • Oudemarkt</p>
-</header>
-
 <nav>
-    <a href="#over">Onze Historie</a>
-    <a href="#assortiment">Brood & Gebak</a>
-    <a href="#praktisch">Locatie</a>
+    <a href="#geschiedenis">Geschiedenis</a>
+    <a href="#eigenaar">Over Elisabeth</a>
+    <a href="#partners">Onze Partners</a>
 </nav>
 
-<div class="container" id="over">
-    <div class="grid">
+<header class="hero">
+    <h1>Het Verhaal van de Korst</h1>
+</header>
+
+<div class="section" id="geschiedenis">
+    <span class="fictief-badge">Fictieve Historie</span>
+    <h2>Een eeuw vol bloem en vuur</h2>
+    <p>In 1897 opende de allereerste generatie Korst de deuren in het hart van Oudemarkt. Wat begon als een bescheiden oven voor de lokale boeren, groeide uit tot een baken van kwaliteit. Tijdens de oorlogsjaren bleef de oven branden, vaak met alternatieve granen, maar altijd met de passie voor het ambacht.</p>
+    
+    <img src="https://images.unsplash.com/photo-1549931319-a545dcf3bc73?q=80&w=2000" class="image-full" alt="Historisch ogende bakkerij setting">
+
+    <p>In de jaren '60 werd de bakkerij gemoderniseerd, maar met een bewuste keuze: de machines mochten het proces nooit versnellen, alleen verlichten. De familierecepten bleven veilig achter slot en grendel, enkel overgedragen van ouder op kind.</p>
+</div>
+
+<div class="section" id="eigenaar" style="padding-top: 0;">
+    <div class="history-grid">
         <div>
-            <h2>Tijd als belangrijkste ingrediënt</h2>
-            <p>Bij De Gouden Korst geloven we niet in haast. In onze bakkerij in Oudemarkt rijst het deeg minstens 24 uur. Dit zorgt voor een diepere smaak en een korst die zijn naam eer aandoet.</p>
-            <p>Eigenaresse Elisabeth van Doren-Korst houdt vast aan het familierecept uit 1897, waarbij alleen natuurlijke desemculturen worden gebruikt.</p>
+            <span class="fictief-badge">Fictieve Eigenaar</span>
+            <h2>Elisabeth van Doren-Korst</h2>
+            <p>Als vierde generatie staat Elisabeth (42) symbool voor de moderne traditie. Na haar studie in Parijs keerde ze terug naar haar roots in Oudemarkt. "Mijn overgrootvader zei altijd: deeg heeft geen horloge nodig, het heeft liefde nodig."</p>
+            <p>Elisabeth staat elke ochtend om 03:00 uur zelf in de bakkerij om de desemculturen te controleren. Ze staat bekend om haar 'Mistkoeken' — een recept dat ze weigert te digitaliseren.</p>
         </div>
-        <div class="image-frame">
-            <img src="https://images.unsplash.com/photo-1585478259715-876a6a81fc08?q=80&w=1000&auto=format&fit=crop" alt="Ambachtelijk brood">
+        <div>
+            <img src="https://images.unsplash.com/photo-1581339393847-b39487f897dd?q=80&w=1000" class="image-square" alt="Elisabeth (fictief)">
         </div>
     </div>
 </div>
 
-<div style="background-color: #f0ede8;">
-    <div class="container" id="assortiment">
-        <h2 style="text-align: center;">Vandaag in de winkel</h2>
-        <div class="assortiment-list">
-            <div class="product-item"><span>Gouden Korst Zuurdesem (800g)</span> <span>€ 4,95</span></div>
-            <div class="product-item"><span>Oudemarktse Appeltaart</span> <span>€ 18,50</span></div>
-            <div class="product-item"><span>Korstakker Meergranen</span> <span>€ 4,20</span></div>
-            <div class="product-item"><span>Kramiek met rozijnen</span> <span>€ 5,10</span></div>
-            <div class="product-item"><span>Mistkoek (Per stuk)</span> <span>€ 2,75</span></div>
-        </div>
-        <p style="text-align: center; margin-top: 20px; font-style: italic; color: #666;">Prijzen zijn indicatief voor dit concept.</p>
-    </div>
-</div>
-
-<div class="container" id="praktisch">
-    <div class="grid">
-        <div class="image-frame" style="box-shadow: -20px 20px 0px var(--accent);">
-            <div style="background: #e0e0e0; height: 300px; display: flex; align-items: center; justify-content: center; font-style: italic;">
-                Kaart van Korststraat 12, Oudemarkt (Fictief)
+<div class="partners" id="partners">
+    <div class="section" style="padding: 0;">
+        <h2>Onze Partners</h2>
+        <p>Wij geloven in een korte keten. Onze ingrediënten komen niet van ver, maar van mensen die we kennen.</p>
+        
+        <div class="partner-list">
+            <div class="partner-card">
+                <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=400" alt="Molen" style="border-radius: 50%; width: 100px; height: 100px; object-fit: cover; margin-bottom: 15px;">
+                <p><strong>Molen De Windval</strong><br>Levert ons biologisch gemalen spelt en rogge uit de regio.</p>
+            </div>
+            <div class="partner-card">
+                <img src="https://images.unsplash.com/photo-1594918808147-7506bad8a445?q=80&w=400" alt="Honing" style="border-radius: 50%; width: 100px; height: 100px; object-fit: cover; margin-bottom: 15px;">
+                <p><strong>Honinghuis Van Laar</strong><br>Verantwoordelijk voor de wilde bloemenhoning in onze gebakjes.</p>
+            </div>
+            <div class="partner-card">
+                <img src="https://images.unsplash.com/photo-1484557985045-edf25e08da73?q=80&w=400" alt="Zuivel" style="border-radius: 50%; width: 100px; height: 100px; object-fit: cover; margin-bottom: 15px;">
+                <p><strong>Het Gouden Erf</strong><br>Onze bron voor verse roomboter en eieren van vrije uitloopkippen.</p>
             </div>
         </div>
-        <div>
-            <h2>Breng ons een bezoek</h2>
-            <p><strong>Adres:</strong> Korststraat 12, 1234 AB Oudemarkt</p>
-            <p><strong>Open:</strong><br>
-                Di - Vr: 07:30 - 17:00<br>
-                Za: 07:30 - 15:00<br>
-                Zo & Ma: Gesloten
-            </p>
-        </div>
     </div>
+</div>
+
+<div class="section" style="text-align: center;">
+    <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=1000" class="image-full" alt="Het eindproduct">
+    <p><strong>Bezoek ons in Oudemarkt (Fictief)</strong><br>Korststraat 12 | Di - Za geopend</p>
 </div>
 
 <footer>
-    <h3>Bakkerij De Gouden Korst</h3>
-    <p>Een eerbetoon aan het bakkersambacht.</p>
-    
-    <div class="disclaimer-box">
-        <strong>FICTIEVE WEBSITE</strong><br>
-        Deze website is gemaakt als portfolio-onderdeel/oefening. Alle genoemde namen, locaties en prijzen zijn verzonnen. Er worden geen echte producten verkocht op dit adres.
+    <h3>De Gouden Korst</h3>
+    <p>Ambachtelijk. Eerlijk. Tijdloos.</p>
+    <div class="disclaimer">
+        <strong>LET OP:</strong> Dit is een volledig fictieve omgeving. De eigenaar, geschiedenis en partners zijn verzonnen voor demonstratiedoeleinden.
     </div>
 </footer>
 
 </body>
 </html>
-
-
